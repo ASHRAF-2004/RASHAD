@@ -52,11 +52,10 @@ movies = {
 }
 
 print("🎬 Welcome to Movie Finder!")
-print("Type 'exit' or 'q' to quit.")
 
 while True:
     print("\nAvailable genres:", ", ".join([g.capitalize() for g in movies.keys()]))
-    genre = input("Enter a genre: ").lower()
+    genre = input("Enter a genre or type 'exit' or 'q' to quit: ").lower()
 
     if genre in {"exit", "q"}:
         print("Thank you for using Movie Finder!")
