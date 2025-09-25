@@ -81,7 +81,16 @@ while True:
     else:
         print("Sorry, that genre is not available.\n")
 
-    again = input("Do you want to look for another genre? (Y/N): ").lower()
-    if again in {"exit", "q"} or again != "y":
-        print("Thank you for using Movie Finder!")
+    exit_program = False
+    while True:
+        again = input("Do you want to look for another genre? (Y/N): ").strip().lower()
+        if again == "y":
+            break
+        if again in {"n", "exit", "q"}:
+            print("Thank you for using Movie Finder!")
+            exit_program = True
+            break
+        print("Invalid choice. Please enter 'Y' or 'N'.")
+
+    if exit_program:
         break
