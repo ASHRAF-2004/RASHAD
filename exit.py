@@ -52,10 +52,15 @@ movies = {
 }
 
 print("🎬 Welcome to Movie Finder!")
+print("Type 'exit' or 'q' to quit.")
 
 while True:
     print("\nAvailable genres:", ", ".join([g.capitalize() for g in movies.keys()]))
     genre = input("Enter a genre: ").lower()
+
+    if genre in {"exit", "q"}:
+        print("Thank you for using Movie Finder!")
+        break
 
     if genre in movies:
         print(f"\nAvailable {genre.capitalize()} Movies:")
@@ -78,6 +83,6 @@ while True:
         print("Sorry, that genre is not available.\n")
 
     again = input("Do you want to look for another genre? (Y/N): ").lower()
-    if again != "y":
+    if again in {"exit", "q"} or again != "y":
         print("Thank you for using Movie Finder!")
         break
